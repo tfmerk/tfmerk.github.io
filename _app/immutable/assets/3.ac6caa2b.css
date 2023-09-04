@@ -1,0 +1,1 @@
+h2.svelte-tugwy6{counter-increment:h2;display:list-item;margin:1.25rem;color:#eb4f27}h2.svelte-tugwy6::marker{display:list-item;content:"#" counter(h2) " ";color:#ffbcad;font-weight:700}li.svelte-tugwy6{margin-left:1rem}
