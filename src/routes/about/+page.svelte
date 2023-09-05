@@ -1,6 +1,7 @@
 <script>
     import { Card } from 'flowbite-svelte';
     import { Icon } from 'flowbite-svelte-icons';
+    import { base } from '$app/paths';
 </script>
   
 <h2>Über mich</h2>
@@ -77,7 +78,7 @@
 <h2>Hobbys</h2>
 
 <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
-    <Card img="/hobbies/bouldern.png" class="mb-4">
+    <Card img="{base}/hobbies/bouldern.png" class="mb-4">
         <h5 class="mb-2 text-2xl font-bolder tracking-tight text-gray-900">Bouldern</h5>
         <p class="mb-3 font-normal text-gray-500 leading-tight">
             Seit einem Jahr habe ich mein Interesse für das Bouldern entdeckt, durch die Einladung meines Freundes.
@@ -85,7 +86,7 @@
             Jeder Fortschritt spornt mich an, mit voller Begeisterung weiterzumachen.
         </p>
     </Card>
-    <Card img="/hobbies/ti.png" class="mb-4">
+    <Card img="{base}/hobbies/ti.png" class="mb-4">
         <h5 class="mb-2 text-2xl font-bolder tracking-tight text-gray-900">Brettspiele</h5>
         <p class="mb-3 font-normal text-gray-500 leading-tight">
             In der Welt der Brettspiele liebe ich besonders 18XX, Eclipse Second Dawn und vor allem Twilight Imperium.
@@ -93,7 +94,7 @@
             Twilight Imperium geht über das bloße Spielen hinaus – hier zählen diplomatische Verhandlungen, Allianzen und das Knüpfen von Beziehungen zu den Mitspielern genauso viel wie das Spielgeschehen selbst.
         </p>
     </Card>
-    <Card img="/hobbies/nature.png" class="mb-4">
+    <Card img="{base}/hobbies/nature.png" class="mb-4">
         <h5 class="mb-2 text-2xl font-bolder tracking-tight text-gray-900">Wandern</h5>
         <p class="mb-3 font-normal text-gray-500 leading-tight">
             Die Natur beim Wandern zu erleben, ist für mich pure Erholung.
@@ -101,7 +102,7 @@
             Die gemeinsamen Erlebnisse mit Freunden oder Familie verstärken das Gefühl von Verbundenheit mit der Natur und bringen uns ein Stück näher zusammen.
         </p>
     </Card>
-    <Card img="/hobbies/chess.png" class="mb-4">
+    <Card img="{base}/hobbies/chess.png" class="mb-4">
         <h5 class="mb-2 text-2xl font-bolder tracking-tight text-gray-900">Schach</h5>
         <p class="mb-3 font-normal text-gray-500 leading-tight">
             Auch wenn das an sich auch unter Brettspiele fällt...

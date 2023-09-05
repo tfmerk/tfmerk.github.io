@@ -5,14 +5,12 @@
   import { page } from "$app/stores"
   import { base } from '$app/paths';
   $: activeUrl = $page.url.pathname;
-
-  export const prerender = true;
 </script>
 
 <div>
   <Navbar let:hidden let:toggle style="border-bottom: 0.25px solid #ddd;">
     <NavBrand href="{base}/" class="Nav">
-      <img src="/logo.png" width="50px" height="50px" alt="Icon" style="margin-right: 10px;" />
+      <img src="{base}/logo.png" width="50px" height="50px" alt="Icon" style="margin-right: 10px;" />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">tfmerk</span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
