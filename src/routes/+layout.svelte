@@ -11,7 +11,7 @@
   <Navbar let:hidden let:toggle style="border-bottom: 0.25px solid #ddd;">
     <NavBrand href="{base}/" class="Nav">
       <img src="{base}/logo.png" width="50px" height="50px" alt="Icon" style="margin-right: 10px;" />
-      <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">tfmerk</span>
+      <span class="self-center whitespace-nowrap text-xl font-semibold">tfmerk</span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
     <NavUl {activeUrl} {hidden}>
@@ -24,7 +24,7 @@
   </div>
   <footer class="bg-white">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
       <div class="items-center">
         <div class="flex mt-4 space-x-5 justify-center sm:mt-0">
           <!-- discord --> 
