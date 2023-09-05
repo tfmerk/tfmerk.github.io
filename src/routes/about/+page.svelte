@@ -15,7 +15,7 @@
 <h2>Technische Fähigkeiten</h2>
 <p>Folgend eine kleine Auflistung mit Programmiersprachen, Frameworks, Tools und Technologien, in denen ich beruflich oder privat Erfahrung gesammelt habe.</p>
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
     <div>
         <h3>Programmier- und Skriptingsprachen</h3>
         <ul class="my-5 space-y-4">
