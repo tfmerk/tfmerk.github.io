@@ -52,24 +52,3 @@
   <!-- Component for long pages to jump back to top -->
   <BackToTop />
 </div>
-
-<style>
-  :global(h1, h2, h3, h4, h5, h6) {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
-  :global(h1) {
-    font-size: xx-large;
-  }
-  :global(h2) {
-    font-size: x-large;
-    margin-top: 1em;
-  }
-  :global(h3) {
-    font-size: large;
-    margin-top: 1em;
-  }
-  :global(p, li) {
-    color: theme('colors.stone.700');
-  }
-</style>
