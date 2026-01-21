@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom's Github Page</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background-color: #000; color: #00ff41;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex; justify-content: center; align-items: center;
+            overflow: hidden;
+        }
+      
+        /* Glow for your specific PHP links */
+        a {
+            color: #aaff00;
+            text-decoration: none;
+            text-shadow: 0 0 5px rgba(170, 255, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #aaff00;
+        }
+
+        /* DIAGONAL DATA STREAM BACKGROUND */
+        .matrix-bg {
+            position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 1; transform: rotate(-45deg);
+        }
+
+        .matrix-bg::after {
+            content: "10110100101101010101100101101010110101011010110101010110110100101101010101100101101010110101011010110101010110";
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            font-size: 14px; line-height: 15px; letter-spacing: 5px;
+            word-break: break-all; opacity: 0.12;
+            animation: diagonalFlow 12s linear infinite;
+        }
+
+        @keyframes diagonalFlow {
+            from { transform: translateY(0); }
+            to { transform: translateY(500px); }
+        }
+
+        /* THE MAIN CONTAINER */
+        .welcome-container {
+            position: relative; z-index: 5;
+            padding: 40px; 
+        }
+
+        .matrix-box {
+            border: 1px solid rgba(0, 255, 65, 0.8);
+            padding: 3rem;
+            background: rgba(0, 10, 0, 0.98);
+            text-align: center;
+            
+            /* MULTI-LAYER GLOW DISSIPATION */
+            box-shadow: 
+                0 0 5px rgba(0, 255, 65, 0.8),
+                0 0 15px rgba(0, 255, 65, 0.5),
+                0 0 40px rgba(0, 255, 65, 0.3),
+                0 0 70px rgba(0, 255, 65, 0.1),
+                inset 0 0 15px rgba(0, 255, 65, 0.2);
+
+            opacity: 0;
+            width: 480px;
+            min-height: 280px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            animation: 
+                flyInMatrix 1s cubic-bezier(0.17, 0.85, 0.43, 1) forwards,
+                glitchShake 0.4s 8.5s ease-in-out 2,
+                glowPulse 4s infinite 2s ease-in-out; 
+        }
+
+        /* WELCOME HEADER */
+        .welcome-header {
+            position: absolute;
+            width: 100%;
+            opacity: 1;
+            animation: finalExit 0.1s 8.7s forwards;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .glitch-text {
+            font-size: 1.8rem; margin: 0 auto; overflow: hidden; white-space: nowrap;
+            border-right: 3px solid #00ff41; 
+            display: block;
+            width: fit-content;
+            max-width: 0; 
+            animation: 
+                typing 2s steps(20) 0.5s forwards, 
+                blinkCursor 0.8s infinite;
+        }
+
+        /* PERCENTAGE SEQUENCE */
+        .counter::after {
+            content: "0%";
+            animation: 
+                countUpFull 7s linear 1.5s forwards, 
+                failFlash 0.5s 8s forwards;
+            font-weight: bold;
+        }
+
+        @keyframes countUpFull {
+            0% { content: "0%"; }
+            10% { content: "14%"; }
+            25% { content: "28%"; }
+            45% { content: "42%"; }
+            65% { content: "67%"; }
+            85% { content: "89%"; }
+            100% { content: "99%"; }
+        }
+
+        /* REAL CONTENT revealed after 8.8s */
+        .real-content {
+            opacity: 0;
+            text-align: left;
+            width: 100%;
+            z-index: 1;
+            animation: finalEntry 0.5s 8.8s forwards;
+        }
+
+        .real-content h2 { 
+            color: #fff; 
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.8); 
+            font-size: 1.2rem; 
+            margin-top: 0;
+            margin-bottom: 20px; 
+            text-transform: uppercase;
+        }
+
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { 
+            margin: 12px 0; 
+            padding-left: 40px; 
+            position: relative;
+            opacity: 0;
+            animation: slideIn 0.4s forwards;
+            font-size: 0.95rem;
+            color: #00ff41;
+        }
+        li::before { content: "[OK]"; position: absolute; left: 0; color: #fff; font-size: 0.7rem; top: 4px; }
+        
+        li:nth-child(1) { animation-delay: 9s; }
+        li:nth-child(2) { animation-delay: 9.2s; }
+        li:nth-child(3) { animation-delay: 9.4s; }
+
+        /* KEYFRAMES */
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.8), 0 0 15px rgba(0, 255, 65, 0.5), 0 0 40px rgba(0, 255, 65, 0.3), 0 0 70px rgba(0, 255, 65, 0.1), inset 0 0 15px rgba(0, 255, 65, 0.2); }
+            50% { box-shadow: 0 0 10px rgba(0, 255, 65, 0.9), 0 0 25px rgba(0, 255, 65, 0.6), 0 0 55px rgba(0, 255, 65, 0.4), 0 0 90px rgba(0, 255, 65, 0.2), inset 0 0 20px rgba(0, 255, 65, 0.3); }
+        }
+
+        @keyframes failFlash {
+            0% { content: "99%"; color: #00ff41; }
+            50% { content: "FAILURE"; color: #ff003c; text-shadow: 0 0 10px #ff003c; }
+            100% { content: "OVERRIDE"; color: #ff003c; text-shadow: 0 0 10px #ff003c; }
+        }
+
+        @keyframes flyInMatrix {
+            0% { transform: scale(0.5) translateY(-150px); filter: blur(20px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); filter: blur(0); opacity: 1; }
+        }
+
+        @keyframes glitchShake {
+            0% { transform: translate(0); border-color: #00ff41; }
+            25% { transform: translate(-10px, 5px); border-color: #ff003c; }
+            50% { transform: translate(10px, -5px); border-color: #00e5ff; }
+            100% { transform: translate(0); border-color: #00ff41; }
+        }
+
+        @keyframes finalExit { to { opacity: 0; visibility: hidden; } }
+        @keyframes finalEntry { to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes typing { from { max-width: 0; } to { max-width: 100%; } }
+        @keyframes blinkCursor { 50% { border-color: transparent; } }
+
+    </style>
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    <div class="welcome-container">
+        <div class="matrix-box">
+            <div class="welcome-header">
+                <h1 class="glitch-text">Hello, and welcome!</h1>
+                <p style="letter-spacing: 2px; margin-top: 20px; font-size: 0.8rem; opacity: 0.8;">STATUS: <span class="counter"></span></p>
+            </div>
+            <div class="real-content">
+                <h2>USER_PROFILE_LOADED:</h2>
+                <ul>
+                    <li>Tom from Germany</li>
+                    <li>Passionate PHP developer</li>
+	    <li>References: <a href="https://discord.com/users/390938915579625472" target="_blank">Discord</a>, <a href="https://www.linkedin.com/in/thomas-merk-3b91a2394/" target="_blank">LinkedIn</a>, <a href="fax.html">Fax</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMINAL - FAX_INCOMING</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background-color: #000;
+            color: #00ff41;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            overflow: hidden;
+        }
+
+        /* Ambient scanline effect */
+        body::before {
+            content: " ";
+            display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 10;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            animation: flicker 0.15s infinite;
+            text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+        }
+
+        /* THE ASCII ART */
+        pre {
+            font-size: 12px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .status {
+            color: #ff2000;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .dots::after {
+            content: '';
+            animation: loading 2s infinite;
+        }
+
+        @keyframes loading {
+            0% { content: ''; }
+            33% { content: '.'; }
+            66% { content: '..'; }
+            100% { content: '...'; }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.97; }
+            5% { opacity: 0.95; }
+            10% { opacity: 0.9; }
+            15% { opacity: 1; }
+            80% { opacity: 0.98; }
+            100% { opacity: 1; }
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            color: #00ff41;
+            text-decoration: none;
+            border: 1px solid #00ff41;
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #00ff41;
+            color: #000;
+            box-shadow: 0 0 20px #00ff41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <pre>
+      _______________________________________________
+     |                                               |
+     |  ___________________________________________  |
+     | |                                           | |
+     | |            INCOMING TRANSMISSION          | |
+     | |___________________________________________| |
+     |                                               |
+     |      ___________________________________      |
+     |     |                                   |     |
+     |     |          REF: WHERE IS FAX?       |     |
+     |     |          SENDER: UNKNOWN          |     |
+     |     |___________________________________|     |
+     |                                               |
+     |    [ 0 ] [ 1 ] [ 2 ]           ( ) ( ) ( )    |
+     |    [ 3 ] [ 4 ] [ 5 ]           ( ) ( ) ( )    |
+     |    [ 6 ] [ 7 ] [ 8 ]           ( ) ( ) ( )    |
+     |    [ * ] [ 0 ] [ # ]             [ START ]    |
+     |_______________________________________________|
+        \___________________________________________/
+        </pre>
+	<div class="status">No connection <span class="dots"></span></div>
+	<p>OK. OK. OK. I'm really sorry. I've lied to you. There is no fax address you can reach me. :(</p>
+	<br>
+	<p><a href="index.html" class="back-btn">< REBOOT_SYSTEM</a></p>
+    </div>
+</body>
+</html>
